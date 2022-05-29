@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 import Select from "react-select";
+import axios from "axios";
+// import SearchUser from "./SearchUser";
+// import { Route } from "react-router-dom";
 
 const UserForm = () => {
   // const history = useHistory();
@@ -20,34 +23,41 @@ const UserForm = () => {
     });
   };
 
-  const PostData = async (e) => {
-    console.log("clickeds");
+  function PostData(e) {
     e.preventDefault();
 
-    const { name, email, contact, course, country, dob } = user;
-
-    const res = await fetch("http://localhost:5000", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, contact, course, country, dob }),
-    });
-
-    console.log("kaam yha tk kiya");
-
-    const data = await res.json();
-
-    if (data.status === 422 || !data) {
-      window.alert("Error in submitting data");
-      console.log("Error in submitting data");
+    if (
+      user.name === "" ||
+      user.email === "" ||
+      user.contact === "" ||
+      user.course === "" ||
+      user.country === ""
+    ) {
+      alert("Please fill all the fields");
     } else {
-      window.alert("Data submitted successfully");
-      console.log("Data submitted successfully");
+      const newUser = {
+        name: user.name,
+        email: user.email,
+        contact: user.contact,
+        course: user.course,
+        country: user.country,
+        dob: user.dob,
+      };
 
-      // history.push("/");
+      axios.post("http://localhost:5000/create", newUser);
+
+      setUser({
+        name: "",
+        email: "",
+        contact: "",
+        course: "",
+        country: "",
+        dob: "",
+      });
+
+      alert("Submitted Successfully");
     }
-  };
+  }
 
   const CourseOptions = [
     { value: "ug", label: "UG" },
@@ -65,6 +75,7 @@ const UserForm = () => {
 
   return (
     <div>
+      <h3>Fill the Information</h3>
       <form method="POST">
         {/* User Name */}
         <div class="form-group">
