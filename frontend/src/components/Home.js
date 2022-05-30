@@ -50,13 +50,18 @@ const HomePage = () => {
             <a
               href="https://www.linkedin.com/in/sonu-kumar-614413192/"
               target="_blank"
+              rel="noreferrer"
             >
               https://www.linkedin.com/in/sonu-kumar-614413192/
             </a>
           </li>
           <li class="list-group-item">
             Linkedln:
-            <a href="https://github.com/Sonukum226" target="_blank">
+            <a
+              href="https://github.com/Sonukum226"
+              target="_blank"
+              rel="noreferrer"
+            >
               https://github.com/Sonukum226
             </a>
           </li>
