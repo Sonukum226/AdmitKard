@@ -15,6 +15,7 @@ mongoose.connect(
 
 //require routes
 app.use("/", require("./routes/userRoute"));
+app.use("/", require("./routes/getData"));
 
 //listen to app at port 5000
 app.listen(5000, () => {

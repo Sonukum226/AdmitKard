@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <div>
-      <h1>AdmitKard 2023 </h1>
+      <h1>AdmitKard 2023 Assignment</h1>
       <br />
       <ul>
         <li>

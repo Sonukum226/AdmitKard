@@ -46,6 +46,8 @@ const UserForm = () => {
 
       axios.post("http://localhost:5000/create", newUser);
 
+      alert("User Created Successfully");
+
       setUser({
         name: "",
         email: "",
@@ -54,8 +56,6 @@ const UserForm = () => {
         country: "",
         dob: "",
       });
-
-      alert("Submitted Successfully");
     }
   }
 
@@ -75,7 +75,7 @@ const UserForm = () => {
 
   return (
     <div>
-      <h3>Fill the Information</h3>
+      <h2>Fill user detail</h2>
       <form method="POST">
         {/* User Name */}
         <div class="form-group">
@@ -147,7 +147,7 @@ const UserForm = () => {
         <div class="form-group">
           <label>Date of Birth</label>
           <input
-            type="email"
+            type="date"
             name="dob"
             class="form-control"
             placeholder="Date of Birth"
