@@ -40,14 +40,21 @@ const SearchUser = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <h1>Search User</h1>
 
-      <div class="input-group">
+      <div>
         <form method="POST">
           <input
             type="search"
-            class="form-control rounded size-lesser"
+            class="form-control rounded size-lesser input-group"
             placeholder="Search"
             name="search"
             value={search}
@@ -55,24 +62,29 @@ const SearchUser = () => {
             aria-describedby="search-addon"
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button
-            type="button"
-            class="btn btn-outline-primary"
-            onClick={handleClick}
-          >
-            search
-          </button>
         </form>
       </div>
+      <button
+        type="button"
+        style={{ marginTop: "10px" }}
+        class="btn btn-outline-primary"
+        onClick={handleClick}
+      >
+        Search user
+      </button>
 
-      <div className="card" style={{ width: "30rem", margin: "20px" }}>
-        <h2>User Details</h2>
-        <p>Name: {user.name}</p>
-        <p>Email: {user.email}</p>
-        <p>Contact: {user.contact}</p>
-        <p>Course: {user.course}</p>
-        <p>Country: {user.country}</p>
-        <p>DOB: {user.dob}</p>
+      <div class="card" style={{ width: "30rem", margin: "20px" }}>
+        <div class="card-header" style={{ textAlign: "center" }}>
+          User Details
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name: {user.name}</li>
+          <li class="list-group-item">Email: {user.email}</li>
+          <li class="list-group-item">Contact: {user.contact}</li>
+          <li class="list-group-item">Course: {user.course}</li>
+          <li class="list-group-item">Country: {user.country}</li>
+          <li class="list-group-item">DOB: {user.dob}</li>
+        </ul>
       </div>
     </div>
   );

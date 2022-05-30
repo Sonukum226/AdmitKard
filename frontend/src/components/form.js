@@ -75,11 +75,11 @@ const UserForm = () => {
 
   return (
     <div>
-      <h2>Fill user detail</h2>
+      <h2 style={{ textAlign: "center" }}>Fill user detail</h2>
       <form method="POST">
         {/* User Name */}
         <div class="form-group">
-          <label>Name</label>
+          <label>Name*</label>
           <input
             type="text"
             class="form-control"
@@ -93,7 +93,7 @@ const UserForm = () => {
           {/* User Email */}
         </div>
         <div class="form-group">
-          <label>Email address</label>
+          <label>Email address*</label>
           <input
             type="email"
             name="email"
@@ -124,7 +124,7 @@ const UserForm = () => {
         {/* course Level */}
 
         <div class="form-group">
-          <label> Select Course Level</label>
+          <label> Select Course Level*</label>
           <Select
             placeholder="Select Course Level"
             options={CourseOptions}
@@ -134,7 +134,7 @@ const UserForm = () => {
         </div>
 
         <div class="form-group">
-          <label> Select Country</label>
+          <label> Select Country*</label>
           <Select
             placeholder="Select Country"
             options={CountryOptions}
